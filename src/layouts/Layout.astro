@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props as Props;
+const pageTitle = title ? `${title} — Drunken Ninja` : 'Drunken Ninja';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-[#ede8db] text-[#1a1a1a] font-sans min-h-screen flex flex-col">
+    <header class="max-w-4xl mx-auto w-full px-6 pt-10 pb-6">
+      <nav class="flex items-center justify-between">
+        <a href="/" class="font-serif text-2xl tracking-tight">Drunken Ninja</a>
+        <a href="/about" class="text-sm uppercase tracking-wide hover:opacity-60">About</a>
+      </nav>
+    </header>
+    <main class="max-w-4xl mx-auto w-full px-6 flex-1">
+      <slot />
+    </main>
+    <footer class="max-w-4xl mx-auto w-full px-6 py-10 text-sm opacity-50">
+      <p>&copy; {new Date().getFullYear()} Drunken Ninja</p>
+    </footer>
+  </body>
+</html>

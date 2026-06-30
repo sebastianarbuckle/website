@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<Layout title={article.data.title}>
+  <article class="py-10">
+    <p class="text-xs uppercase tracking-widest opacity-50 mb-3">{article.data.category}</p>
+    <h1 class="font-serif text-4xl mb-3">{article.data.title}</h1>
+    <time class="text-sm opacity-40 block mb-8" datetime={article.data.date.toISOString()}>
+      {article.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+    </time>
+    <div class="prose-content max-w-none">
+      <Content />
+    </div>
+    <div class="mt-10 flex items-center justify-between border-t border-black/10 pt-6">
+      <a href="/" class="text-sm uppercase tracking-wide hover:opacity-60">&larr; Back to all articles</a>
+      <button id="share-button" data-url={Astro.url.href} class="text-sm uppercase tracking-wide hover:opacity-60">
+        Share
+      </button>
+    </div>
+    <p id="share-confirmation" class="text-sm opacity-50 mt-2 text-right hidden">Link copied</p>
+  </article>
+</Layout>
+
+<script>
+  const button = document.getElementById('share-button');
+  const confirmation = document.getElementById('share-confirmation');
+
+  button?.addEventListener('click', async () => {
+    const url = button.getAttribute('data-url') ?? window.location.href;
+    await navigator.clipboard.writeText(url);
+    confirmation?.classList.remove('hidden');
+    setTimeout(() => confirmation?.classList.add('hidden'), 2000);
+  });
+</script>

@@ -9,7 +9,17 @@ description: "A custom Claude skill that values a single stock against a set of 
 
 Stock-valuer is a skill I built with Claude that values a single stock and tells me clearly what to do with it. I type something like "/value-stock Nvidia", and it researches the company on the web, checks it against a set of criteria I wrote myself, and sends back a one-page PDF report.
 
+<figure>
+  <img src="/images/stock-valuer/value-stock-prompt.jpg" alt="Typing /value-stock Nvidia into Claude" />
+  <figcaption>Kicking off a report with a single command.</figcaption>
+</figure>
+
 The report opens with one of five ratings: Strong sell, Sell, Hold, Buy or Strong buy. Each one comes with a time period in which to act, a date to review the call, and a short explanation of why that decision was reached. Below that sit a pie chart of where the company's revenue comes from, a chart of its share price over the past year, and a section for each part of my criteria, with sources listed at the bottom.
+
+<figure>
+  <img src="/images/stock-valuer/lloyds-report.jpg" alt="Example stock-valuer report for Lloyds Banking Group, rated Hold" />
+  <figcaption>An example report — a Hold rating for Lloyds Banking Group.</figcaption>
+</figure>
 
 ## The criteria I used
 

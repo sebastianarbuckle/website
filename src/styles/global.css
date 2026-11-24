@@ -21,3 +21,27 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+.prose-content :where(h3) {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+}
+
+.prose-content figure {
+  margin: 2em 0;
+}
+
+.prose-content figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(0 0 0 / 0.1);
+}
+
+.prose-content figcaption {
+  margin-top: 0.75em;
+  font-size: 0.875rem;
+  opacity: 0.5;
+  text-align: center;
+}

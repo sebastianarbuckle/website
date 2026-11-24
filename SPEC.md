@@ -1,14 +1,14 @@
 # Drunken Ninja — Website Specification
 
-**Version:** 1.4  
+**Version:** 1.5  
 **Status:** Draft — awaiting approval  
-**Last updated:** 2026-06-30
+**Last updated:** 2026-11-24
 
 ---
 
 ## 1. Purpose
 
-Drunken Ninja is a personal blog for movie reviews and opinion pieces. The site is public — anyone can visit and read. Only the owner (Sebastian) publishes content. There is no user login, no comments section, and no social features in this first version.
+Drunken Ninja is a personal blog for writing and projects on journalism, finance, film, and other topics the owner is interested in. The site is public — anyone can visit and read. Only the owner (Sebastian) publishes content. There is no user login, no comments section, and no social features in this first version.
 
 ---
 
@@ -20,7 +20,7 @@ Drunken Ninja is a personal blog for movie reviews and opinion pieces. The site 
   - Title
   - Publication date
   - A short description (one or two sentences)
-  - A category label (e.g. "Review" or "Opinion")
+  - A category label (e.g. "Journalism", "Finance", "Film", or similar — categories are open-ended, not a fixed list)
 - Clicking an article takes you to the full article page.
 - The site name "Drunken Ninja" appears prominently at the top.
 - No tagline — pure minimalism, name only.
@@ -36,7 +36,7 @@ Drunken Ninja is a personal blog for movie reviews and opinion pieces. The site 
 - Linked from the navigation.
 - Final text:
 
-  > Drunken Ninja covers film — new releases as they land, and the bigger conversations around them. Some pieces are reviews, some are arguments, some are just thoughts that needed somewhere to go.
+  > Writing and projects on journalism, finance, film, and other things I'm interested in.
 
 ---
 

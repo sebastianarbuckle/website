@@ -59,6 +59,7 @@ Minimal, slightly formal, and playful. Clean and uncluttered. Takes itself serio
 - Background: off-white / pale cream
 - Body text: black
 - Titles: black, set in the editorial serif style referenced below (no separate accent colour — the contrast comes from typography, not colour)
+- Exception: category labels are shown as small coloured pill tags, in the style of the Financial Times' section tags. Each category has its own colour; "Finance" is light green.
 
 ### Typography
 - Headings/titles: an elegant serif font with an editorial, slightly film-grain feel — referencing the caption style seen in Retro Ralph's videos (e.g. "born in the 19th century on Savile Row")

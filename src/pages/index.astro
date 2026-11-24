@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { categoryTagClass } from '../lib/categories';
 
 const articles = (await getCollection('articles')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -14,7 +15,7 @@ const articles = (await getCollection('articles')).sort(
         {articles.map((article) => (
           <li>
             <a href={`/articles/${article.id}`} class="group block border border-black/10 p-6 hover:border-black/30 transition-colors">
-              <p class="text-xs uppercase tracking-widest opacity-50 mb-3">{article.data.category}</p>
+              <p class={categoryTagClass(article.data.category)}>{article.data.category}</p>
               <h2 class="font-serif text-2xl mb-3 group-hover:opacity-70 transition-opacity leading-snug">
                 {article.data.title}
               </h2>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
+import { categoryTagClass } from '../../lib/categories';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -16,7 +17,7 @@ const { Content } = await render(article);
 
 <Layout title={article.data.title}>
   <article class="py-10">
-    <p class="text-xs uppercase tracking-widest opacity-50 mb-3">{article.data.category}</p>
+    <p class={categoryTagClass(article.data.category)}>{article.data.category}</p>
     <h1 class="font-serif text-4xl mb-3">{article.data.title}</h1>
     <time class="text-sm opacity-40 block mb-8" datetime={article.data.date.toISOString()}>
       {article.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
